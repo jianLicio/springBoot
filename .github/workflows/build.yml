@@ -40,7 +40,7 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
-          projectBaseDir: ./project-root/api1-springboot/projeto_t_a_c
+          projectBaseDir: ./project-root/api1-springboot/springBoot/projeto_t_a_c
           args: -X
         env:
           JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.11-9/x64
@@ -49,10 +49,10 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Build and analyze Java project
-        working-directory: ./project-root/api1-springboot/projeto_t_a_c
+        working-directory: ./project-root/api1-springboot/springBoot/projeto_t_a_c
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jianLicio_springBoot
       
       - name: List directory contents for debugging
-        run: ls -R ./project-root/api1-springboot/projeto_t_a_c
+        run: ls -R ./project-root/api1-springboot/springBoot/projeto_t_a_c
