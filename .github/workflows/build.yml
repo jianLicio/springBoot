@@ -37,6 +37,9 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
+      - name: List directory contents for debugging
+        run: ls -R project-root/api1-springboot/springBoot/projeto_t_a_c
+
       - name: Build and analyze
         working-directory: project-root/api1-springboot/springBoot/projeto_t_a_c
         env:
