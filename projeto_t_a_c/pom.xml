@@ -172,6 +172,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<sonar.login>${env.SONAR_JWT_TOKEN}</sonar.login>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
