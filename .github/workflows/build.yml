@@ -38,10 +38,10 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: List directory contents for debugging
-        run: ls -R project-root/api1-springboot/springBoot/projeto_t_a_c
+        run: ls -R .
 
       - name: Build and analyze
-        working-directory: project-root/api1-springboot/springBoot/projeto_t_a_c
+        working-directory: projeto_t_a_c
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
