@@ -3,7 +3,7 @@ name: SonarCloud
 on:
   push:
     branches:
-      - main
+      - jian
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -45,5 +45,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jianLicio_springBoot -Dsonar.login= ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jianLicio_springBoot -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        
+      - name: Debug SONAR_TOKEN
+        run: echo $SONAR_TOKEN
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
