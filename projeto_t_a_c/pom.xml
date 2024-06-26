@@ -221,7 +221,7 @@
 		</profile>
 	</profiles> -->
 
-	<distributionManagement>
+	<!-- <distributionManagement>
 		<repository>
 			<id>releases</id>
 			<url>http://your.repository.url/releases</url>
@@ -230,6 +230,6 @@
 			<id>snapshots</id>
 			<url>http://your.repository.url/snapshots</url>
 		</snapshotRepository>
-	</distributionManagement>
+	</distributionManagement> -->
 
 </project>
